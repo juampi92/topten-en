@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "position": {
+            "type": "object",
+            "description": "In this object, you must define the position of the card. It starts at {row: 1, col: 1}. Each position must be unique.",
+            "properties": {
+              "row": { "type": "number" },
+              "col": { "type": "number" }
+            },
+            "required": [ "row", "col" ]
+          },
+          "prompt_top": {
+              "type": "string",
+              "description": "The text of the TOP prompt for that CARD. It MUST contain the <green>...</green> tag and the <red>...</red> tag to reflect the highlighted elements in the card's prompt. Make sure the colors match the tags.",
+              "example": "Te han detenido por cavar un túnel desde tu casa hasta el banco de España. Solo puedes hacer una llamada. ¿A quién llamas? De <green>menos lógico</green> a <red>más lógico</red>."
+          },
+          "prompt_bottom": {
+              "type": "string",
+              "description": "The text of the BOTTOM prompt for that CARD. It MUST contain the <green>...</green> tag and the <red>...</red> tag to reflect the highlighted elements in the card's prompt. Make sure the colors match the tags.",
+              "example": "Te han detenido por cavar un túnel desde tu casa hasta el banco de España. Solo puedes hacer una llamada. ¿A quién llamas? De <green>menos lógico</green> a <red>más lógico</red>."
+          }
+        },
+        "propertyOrdering": [ "position", "prompt_top", "prompt_bottom" ],
+        "required": [ "position", "prompt_top", "prompt_bottom" ]
+      }
+    }
+  },
+  "propertyOrdering": [ "cards" ],
+  "required": [ "cards" ]
+}
