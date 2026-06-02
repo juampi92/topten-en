@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "moduleResolution": "bundler",
+    "target": "ESNext",
+    "module": "ESNext",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.svelte"]
+}
