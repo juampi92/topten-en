@@ -15,5 +15,7 @@
   <button class="card-modal-close" on:click={() => dispatch('close')} aria-label="Close">
     <IconClose width="18" height="18" />
   </button>
-  <CardPromptCarousel prompts={card.prompts} />
+  <div class="card-prompt-area">
+    <CardPromptCarousel prompts={card.prompts} />
+  </div>
 </div>

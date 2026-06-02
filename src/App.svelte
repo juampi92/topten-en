@@ -9,12 +9,11 @@
   import DeckEmpty from './components/DeckEmpty.svelte';
   import DrawnSheet from './components/DrawnSheet.svelte';
   import SettingsSheet from './components/SettingsSheet.svelte';
-  import Confirm from './components/Confirm.svelte';
 
   import IconHome from './icons/IconHome.svelte';
   import IconStack from './icons/IconStack.svelte';
   import IconNext from './icons/IconNext.svelte';
-  import IconShuffle from './icons/IconShuffle.svelte';
+  import IconDown from './icons/IconDown.svelte';
 
   let state: GameState = { ...DEFAULT_STATE };
   let hydrated = false;
@@ -63,13 +62,20 @@
   function onCardTap() {
     if (lockRef) return;
     if (state.current === null) return;
-    if (!state.revealed) {
-      state = { ...state, revealed: true };
-      lockRef = true;
-      setTimeout(() => { lockRef = false; }, 720);
+    if (state.revealed) {
+      // Face-up card: tap is intentionally a no-op to prevent accidental discards.
       return;
     }
-    advance();
+    reveal();
+  }
+
+  function reveal() {
+    if (lockRef) return;
+    if (state.current === null) return;
+    if (state.revealed) return;
+    state = { ...state, revealed: true };
+    lockRef = true;
+    setTimeout(() => { lockRef = false; }, 720);
   }
 
   function advance() {
@@ -90,11 +96,6 @@
       setTimeout(() => { dealing = false; }, 600);
       lockRef = false;
     }, 500);
-  }
-
-  function handleReshuffle() {
-    openSheet = null;
-    startFreshGame();
   }
 
   function handleClearAndReshuffle() {
@@ -156,6 +157,7 @@
               {dealing}
               {discarding}
               on:tap={onCardTap}
+              on:discard={advance}
             />
           {/key}
         {/if}
@@ -169,16 +171,23 @@
         </button>
         <button
           class="action primary"
-          on:click={onCardTap}
-          disabled={state.current === null}
-          style={state.current === null ? 'opacity: 0.4; pointer-events: none' : ''}
+          on:click={advance}
+          disabled={state.current === null || !state.revealed}
+          style={(state.current === null || !state.revealed) ? 'opacity: 0.4; pointer-events: none' : ''}
+          aria-label="Discard card"
+        >
+          <IconDown />
+          <span class="label">DISCARD</span>
+        </button>
+        <button
+          class="action primary"
+          on:click={reveal}
+          disabled={state.current === null || state.revealed}
+          style={(state.current === null || state.revealed) ? 'opacity: 0.4; pointer-events: none' : ''}
+          aria-label="Draw card"
         >
           <IconNext />
-          <span class="label">{state.revealed ? 'NEXT' : 'REVEAL'}</span>
-        </button>
-        <button class="action" on:click={() => { openSheet = 'confirm-reshuffle'; }}>
-          <IconShuffle />
-          <span class="label">SHUFFLE</span>
+          <span class="label">DRAW</span>
         </button>
       </div>
     </div>
@@ -196,15 +205,6 @@
         settings={state.settings}
         on:change={(e) => updateSettings(e.detail)}
         on:close={() => { openSheet = null; }}
-      />
-    {/if}
-    {#if openSheet === 'confirm-reshuffle'}
-      <Confirm
-        title="Reshuffle?"
-        message="Clears your drawn pile and starts a new game."
-        confirmLabel="Reshuffle"
-        on:confirm={handleReshuffle}
-        on:cancel={() => { openSheet = null; }}
       />
     {/if}
   {/if}

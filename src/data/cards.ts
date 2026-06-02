@@ -1,4 +1,4 @@
-import rawData from '../../data/cards.json';
+import rawData from '../../data/cards_en.json';
 import type { CardMap } from '../lib/types';
 
 export const CARDS: CardMap = Object.fromEntries(

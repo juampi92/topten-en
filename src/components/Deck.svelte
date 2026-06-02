@@ -25,6 +25,6 @@
     <div class="mini-back" />
   </div>
   {#if card}
-    <FlipCard {card} {revealed} {dealing} {discarding} on:tap />
+    <FlipCard {card} {revealed} {dealing} {discarding} on:tap on:discard />
   {/if}
 </div>
