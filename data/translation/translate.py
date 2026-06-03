@@ -57,7 +57,7 @@ positions, lowercase tag names). They must wrap the words/phrases that occupy th
 "slot" in the English sentence as they did in the Spanish sentence. IMPORTANT: if a translation \
 is missing this detail, we will REJECT it, so it is incredibly important you don't miss this.
 2. The word "CAPITEN" (sometimes written as <u>CAPITEN</u>) refers to a recurring mascot \
-character of the game. It MUST remain exactly as "CAPITEN" in English. Preserve any \
+character of the game. It MUST be translated as "CAP'TEN" in English. Preserve any \
 <u>...</u> underline tags around it as well.
 3. Keep the tone playful, punchy, and a bit absurd — matching the original Spanish. \
 Translating literally is fine when it works; when it doesn't, prefer a natural English \
