@@ -154,20 +154,28 @@ h1, h2, h3, h4 {
   color: var(--accent-high);
 }
 
-.tagline-placeholder {
+.tagline {
   position: relative; z-index: 1;
   text-align: center;
   color: var(--chrome-fg);
-  opacity: 0.35;
+  opacity: 0.85;
   font-family: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 500;
   margin: 0 auto 28px;
-  letter-spacing: 0.06em;
-  border: 1px dashed currentColor;
-  padding: 10px 16px;
-  border-radius: 6px;
-  max-width: 280px;
+  letter-spacing: 0.04em;
+  max-width: 320px;
+  line-height: 1.5;
+}
+.tagline a {
+  color: var(--accent-high);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: opacity 0.15s ease;
+}
+.tagline a:hover {
+  opacity: 0.75;
 }
 
 .welcome-cta {

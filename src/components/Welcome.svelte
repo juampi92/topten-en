@@ -28,7 +28,13 @@
     <span class="word">Top<span class="ten">Ten</span></span>
   </div>
 
-  <div class="tagline-placeholder">[ tagline ]</div>
+  <p class="tagline">
+    The English translation for <a
+      href="https://boardgamegeek.com/boardgame/300905/top-ten"
+      target="_blank"
+      rel="noopener noreferrer">TopTen</a
+    >. It requires the base game!
+  </p>
 
   <div class="welcome-cta">
     {#if hasGame}
@@ -49,6 +55,6 @@
   </div>
 
   <div class="welcome-footer-placeholder">
-    {drawnCount}/{totalCards} drawn · [ footer ]
+    {drawnCount}/{totalCards} drawn
   </div>
 </div>
