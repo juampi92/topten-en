@@ -1,0 +1,5 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" {...$$restProps}>
+  <circle cx="12" cy="12" r="10" />
+  <line x1="12" y1="11" x2="12" y2="17" />
+  <circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none" />
+</svg>

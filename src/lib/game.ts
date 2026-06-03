@@ -1,4 +1,4 @@
-import type { CardMap, GameState, GameSettings } from './types';
+import type { CardMap, GameState } from './types';
 
 export const STORAGE_KEY = 'topten.v3';
 
@@ -7,7 +7,6 @@ export const DEFAULT_STATE: GameState = {
   drawn: [],
   current: null,
   revealed: false,
-  settings: { fontSize: 'md' },
   initialized: false,
 };
 

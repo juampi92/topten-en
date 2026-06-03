@@ -1,5 +1,5 @@
 <script lang="ts">
-  import IconCog from '../icons/IconCog.svelte';
+  import IconInfo from '../icons/IconInfo.svelte';
   import IconArrow from '../icons/IconArrow.svelte';
   import IconShuffle from '../icons/IconShuffle.svelte';
 
@@ -8,7 +8,7 @@
   export let hasGame;
   export let onStart;
   export let onContinue;
-  export let onOpenSettings;
+  export let onOpenInfo;
 </script>
 
 <div class="welcome" data-screen-label="01 Welcome">
@@ -19,8 +19,8 @@
   </div>
 
   <div class="welcome-top">
-    <button class="icon-btn" on:click={onOpenSettings} aria-label="Settings">
-      <IconCog width="20" height="20" />
+    <button class="icon-btn" on:click={onOpenInfo} aria-label="About">
+      <IconInfo width="20" height="20" />
     </button>
   </div>
 

@@ -8,7 +8,7 @@
   import Deck from './components/Deck.svelte';
   import DeckEmpty from './components/DeckEmpty.svelte';
   import DrawnSheet from './components/DrawnSheet.svelte';
-  import SettingsSheet from './components/SettingsSheet.svelte';
+  import InfoSheet from './components/InfoSheet.svelte';
 
   import IconHome from './icons/IconHome.svelte';
   import IconStack from './icons/IconStack.svelte';
@@ -28,20 +28,13 @@
   onMount(() => {
     const loaded = loadState();
     if (loaded) {
-      state = {
-        ...DEFAULT_STATE,
-        ...loaded,
-        settings: { ...DEFAULT_STATE.settings, ...(loaded.settings || {}) },
-      };
+      state = { ...DEFAULT_STATE, ...loaded };
     }
     hydrated = true;
   });
 
   // Persist state whenever it changes (only after hydration)
   $: if (hydrated) saveState(state);
-
-  // Apply font size to <html>
-  $: document.documentElement.setAttribute('data-fontsize', state.settings.fontSize);
 
   $: hasActiveGame = state.current !== null || state.drawn.length > 0;
 
@@ -103,10 +96,6 @@
     startFreshGame();
   }
 
-  function updateSettings(newSettings: GameState['settings']) {
-    state = { ...state, settings: newSettings };
-  }
-
   $: cardsTotal = Object.keys(CARDS).length;
   $: deckRemaining = state.deck.length;
 
@@ -120,13 +109,11 @@
       hasGame={hasActiveGame}
       onStart={startFreshGame}
       onContinue={continueGame}
-      onOpenSettings={() => { openSheet = 'settings'; }}
+      onOpenInfo={() => { openSheet = 'info'; }}
     />
 
-    {#if openSheet === 'settings'}
-      <SettingsSheet
-        settings={state.settings}
-        on:change={(e) => updateSettings(e.detail)}
+    {#if openSheet === 'info'}
+      <InfoSheet
         on:close={() => { openSheet = null; }}
       />
     {/if}
@@ -200,10 +187,8 @@
         on:clear={handleClearAndReshuffle}
       />
     {/if}
-    {#if openSheet === 'settings'}
-      <SettingsSheet
-        settings={state.settings}
-        on:change={(e) => updateSettings(e.detail)}
+    {#if openSheet === 'info'}
+      <InfoSheet
         on:close={() => { openSheet = null; }}
       />
     {/if}

@@ -51,11 +51,6 @@
   --card-prompt: 1.2rem;
 }
 
-[data-fontsize="sm"] { --fs-base: 15px; --card-prompt: 1.2rem; }
-[data-fontsize="md"] { --fs-base: 16px; --card-prompt: 1.2rem; }
-[data-fontsize="lg"] { --fs-base: 17px; --card-prompt: 1.2rem; }
-[data-fontsize="xl"] { --fs-base: 19px; --card-prompt: 1.2rem; }
-
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
 html, body {
@@ -451,6 +446,9 @@ h1, h2, h3, h4 {
   color: var(--card-ink);
   text-wrap: balance;
   letter-spacing: var(--display-tracking);
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
 }
 .card-prompt .one,
 .card-prompt .ten {
@@ -855,31 +853,6 @@ h1, h2, h3, h4 {
   color: var(--card-ink-soft);
   margin-bottom: 10px;
 }
-
-.size-options {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-}
-.size-options button {
-  background: var(--card-bg-2);
-  color: var(--card-ink);
-  border: 2px solid transparent;
-  padding: 14px 8px;
-  border-radius: 18px;
-  font-family: var(--display-font);
-  letter-spacing: 0.04em;
-  transition: all 0.15s;
-}
-.size-options button[aria-pressed="true"] {
-  background: var(--bg-mid);
-  color: var(--chrome-cream);
-  border-color: var(--bg-mid);
-}
-.size-options .s1 { font-size: 0.8rem; }
-.size-options .s2 { font-size: 1rem; }
-.size-options .s3 { font-size: 1.2rem; }
-.size-options .s4 { font-size: 1.4rem; }
 
 .setting-info {
   background: var(--card-bg-2);
