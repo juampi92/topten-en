@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="ogTitle ogDesc">
+  <title id="ogTitle">TopTen - EN</title>
+  <desc id="ogDesc">TopTen - EN: English prompt cards for the TopTen party game. Play TopTen in English with all the prompt cards translated.</desc>
+
+  <defs>
+    <style type="text/css"><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@600;700;800&family=JetBrains+Mono:wght@500&display=swap');
+
+      .display { font-family: 'Lilita One', Impact, 'Arial Black', sans-serif; }
+      .body    { font-family: 'Nunito', system-ui, -apple-system, sans-serif; }
+      .mono    { font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace; }
+    ]]></style>
+
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14756d" />
+      <stop offset="1" stop-color="#0a3d3a" />
+    </linearGradient>
+
+    <radialGradient id="bgLight" cx="0.82" cy="-0.05" r="0.85">
+      <stop offset="0" stop-color="#fef0c7" stop-opacity="0.18" />
+      <stop offset="1" stop-color="#fef0c7" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="ribbonRule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2faf6e" />
+      <stop offset="1" stop-color="#e85a3c" />
+    </linearGradient>
+
+    <filter id="cardShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="14" />
+      <feOffset dx="0" dy="20" result="off" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.55" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+  <rect width="1200" height="630" fill="url(#bgLight)" />
+
+  <g style="filter: blur(42px);" opacity="0.55">
+    <circle cx="220" cy="120" r="150" fill="#1eb5a7" />
+    <circle cx="80" cy="520" r="120" fill="#e85a3c" opacity="0.55" />
+    <circle cx="1080" cy="600" r="110" fill="#f5dc8a" opacity="0.45" />
+  </g>
+
+  <g transform="translate(70, 165)">
+    <text class="display" font-size="180" fill="#fef0c7" letter-spacing="-3" style="text-shadow: 0 6px 0 rgba(10,38,36,0.35);">
+      <tspan>Top</tspan><tspan fill="#e85a3c">Ten</tspan>
+    </text>
+  </g>
+
+  <text class="body" font-weight="700" fill="#fef0c7" opacity="0.95" font-size="30" letter-spacing="0.2">
+    <tspan x="74" y="395">Play TopTen in English.</tspan>
+    <tspan x="74" y="437">Free companion app with all the</tspan>
+    <tspan x="74" y="479">prompt cards translated.</tspan>
+  </text>
+
+  <text x="74" y="588" class="mono" font-size="17" font-weight="500" fill="#fef0c7" opacity="0.5" letter-spacing="3">
+    TopTen - EN · v1.0
+  </text>
+
+  <g transform="translate(880, 315) rotate(-6)">
+    <g transform="translate(-230, -310)">
+      <rect width="460" height="620" rx="36" ry="36" fill="#fef0c7" filter="url(#cardShadow)" />
+      <rect x="14" y="14" width="432" height="592" rx="24" ry="24" fill="none" stroke="rgba(10,38,36,0.16)" stroke-width="3" stroke-dasharray="7 7" opacity="0.7" />
+
+      <g transform="translate(230, 230)">
+        <text text-anchor="middle" class="display" fill="#0a2624" font-size="34" letter-spacing="0.5" style="text-shadow: 0 1px 0 rgba(254,240,199,0.6);">
+          <tspan x="0" y="0">YOU'VE BEEN ARRESTED</tspan>
+          <tspan x="0" y="46">FOR DIGGING A TUNNEL.</tspan>
+          <tspan x="0" y="120">WHO DO YOU CALL?</tspan>
+          <tspan x="0" y="200" font-size="28">FROM <tspan fill="#2faf6e">LEAST LOGICAL</tspan></tspan>
+          <tspan x="0" y="240" font-size="28">TO <tspan fill="#e85a3c">MOST LOGICAL</tspan>.</tspan>
+        </text>
+      </g>
+
+      <g transform="translate(40, 555)">
+        <line x1="0" y1="-18" x2="380" y2="-18" stroke="rgba(10,38,36,0.14)" stroke-width="2" stroke-dasharray="5 5" />
+        <text x="0" y="20" class="display" font-size="44" fill="#2faf6e">1</text>
+        <rect x="48" y="6" width="284" height="3" fill="url(#ribbonRule)" opacity="0.6" rx="2" />
+        <text x="380" y="20" class="display" font-size="44" fill="#e85a3c" text-anchor="end">10</text>
+      </g>
+    </g>
+  </g>
+</svg>

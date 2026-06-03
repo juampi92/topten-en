@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "og:image": "node scripts/build-og-image.mjs",
     "test": "vitest run",
     "test:watch": "vitest"
   },

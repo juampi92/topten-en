@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OG image preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg-deep: #0a3d3a;
+        --bg-mid: #14756d;
+        --chrome-cream: #fef0c7;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 32px 16px 64px;
+        background: #1a1a1a;
+        color: var(--chrome-cream);
+        font-family: 'Nunito', system-ui, sans-serif;
+        min-height: 100vh;
+      }
+      h1 {
+        font-family: 'Lilita One', Impact, sans-serif;
+        font-weight: 400;
+        font-size: 1.6rem;
+        margin: 0 0 8px;
+        text-align: center;
+      }
+      p.lead {
+        text-align: center;
+        opacity: 0.6;
+        margin: 0 0 32px;
+        font-size: 0.95rem;
+      }
+      .section {
+        max-width: 1240px;
+        margin: 0 auto 48px;
+      }
+      .section h2 {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        opacity: 0.55;
+        margin: 0 0 12px;
+        font-weight: 500;
+      }
+      .frame {
+        background: #000;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      }
+      .frame img,
+      .frame object,
+      .frame .inline-svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .row {
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .phone {
+        width: 375px;
+        border-radius: 36px;
+        border: 8px solid #000;
+        background: #000;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      }
+      .phone .frame { border: none; border-radius: 0; box-shadow: none; }
+      .meta-block {
+        background: #111;
+        color: #ccc;
+        border-radius: 8px;
+        padding: 18px 20px;
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-size: 0.78rem;
+        line-height: 1.5;
+        white-space: pre;
+        overflow-x: auto;
+        max-width: 1240px;
+        margin: 0 auto;
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+      .meta-block .tag { color: #e85a3c; }
+      .meta-block .attr { color: #2faf6e; }
+      .meta-block .str { color: #fef0c7; }
+    </style>
+  </head>
+  <body>
+    <h1>OG image preview</h1>
+    <p class="lead">TopTen - EN · 1200×630 · open this file directly in a browser (<code>file://</code>) or via the dev server</p>
+
+    <div class="section">
+      <h2>Native 1200×630 (via &lt;img&gt; — what social platforms get when they fetch the file)</h2>
+      <div class="frame">
+        <img src="/og-image.svg" alt="TopTen - EN share image" />
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Inline SVG (same source, no file fetch — sanity check)</h2>
+      <div class="frame">
+        <div class="inline-svg" id="inline-svg"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Phone preview (375px) — how it reads at small sizes</h2>
+      <div class="row">
+        <div class="phone">
+          <div class="frame">
+            <img src="/og-image.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Meta tags about to be added to <code>index.html</code></h2>
+      <div class="meta-block"><span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="str">"description"</span> <span class="attr">content</span>=<span class="str">"Play TopTen in English. Free companion app with all the prompt cards translated. Bring your own number cards."</span> <span class="tag">/&gt;</span>
+
+<span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="str">"og:type"</span>        <span class="attr">content</span>=<span class="str">"website"</span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="str">"og:site_name"</span>  <span class="attr">content</span>=<span class="str">"TopTen - EN"</span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="str">"og:title"</span>      <span class="attr">content</span>=<span class="str">"TopTen - EN"</span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="str">"og:description"</span> <span class="attr">content</span>=<span class="str">"Play TopTen in English. Free companion app with all the prompt cards translated. Bring your own number cards."</span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="str">"og:url"</span>        <span class="attr">content</span>=<span class="str">"__SITE_URL__"</span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="str">"og:image"</span>      <span class="attr">content</span>=<span class="str">"__SITE_URL__og-image.png"</span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="str">"og:image:width"</span>  <span class="attr">content</span>=<span class="str">"1200"</span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="str">"og:image:height"</span> <span class="attr">content</span>=<span class="str">"630"</span>  <span class="tag">/&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="str">"og:image:alt"</span>    <span class="attr">content</span>=<span class="str">"TopTen - EN: English prompt cards for the TopTen party game"</span> <span class="tag">/&gt;</span>
+
+<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="str">"twitter:card"</span>        <span class="attr">content</span>=<span class="str">"summary_large_image"</span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="str">"twitter:title"</span>      <span class="attr">content</span>=<span class="str">"TopTen - EN"</span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="str">"twitter:description"</span> <span class="attr">content</span>=<span class="str">"Play TopTen in English. Free companion app with all the prompt cards translated. Bring your own number cards."</span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="str">"twitter:image"</span>      <span class="attr">content</span>=<span class="str">"__SITE_URL__og-image.png"</span> <span class="tag">/&gt;</span>
+
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="str">"canonical"</span> <span class="attr">href</span>=<span class="str">"__SITE_URL__"</span> <span class="tag">/&gt;</span></div>
+    </div>
+
+    <!--
+      Regenerate the PNG (committed to the repo, but re-run after editing the SVG):
+        npm run og:image
+
+      Validation: https://www.opengraph.xyz/ or the Twitter Card validator against
+      the served URL.
+    -->
+
+    <script>
+      const paths = ['public/og-image.svg', 'og-image.svg', '/og-image.svg'];
+      (async () => {
+        for (const p of paths) {
+          try {
+            const r = await fetch(p);
+            if (r.ok) {
+              const svg = await r.text();
+              document.getElementById('inline-svg').innerHTML = svg;
+              return;
+            }
+          } catch (_) { /* try next */ }
+        }
+        document.getElementById('inline-svg').innerHTML =
+          '<p style="padding:24px;color:#999">Inline SVG fetch failed. Open this file via the dev server (e.g. <code>npm run dev</code>) for the inline preview to load.</p>';
+      })();
+    </script>
+  </body>
+</html>
