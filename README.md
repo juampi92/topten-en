@@ -1,10 +1,10 @@
 # TopTen - EN (🇬🇧)
 
-This repository is a translation for the board game TopTen into English. It is based on the Spanish (🇪🇸) version.
+This repository is a translation for the board game [TopTen](https://boardgamegeek.com/boardgame/300905/top-ten) into English. It is based on the Spanish (🇪🇸) version.
 
 ## Requirements
 
-This is not a replacement for the original game (🏴‍☠️), you need a copy of TopTen in any language to play. This project only provides the **English translations** of the playing cards.
+This is not a replacement for the original game (🏴‍☠️), you need a [copy of TopTen](https://www.google.com/search?q=buy+cocktail+games+top+ten) in any language to play. This project only provides the **English translations** of the playing cards.
 
 This digital version will only provide the playing cards translated to English.
 Pair this with the original game's instructions booklet and its number cards (1–10) to play.
